@@ -36,6 +36,25 @@ app.get("*",(req,res)=>{
     res.send("this psth not found");
 })  
 
+
+/********************* app.post ***************/
+app.post("/",(req,res)=>{
+    res.send("hello nik root");
+    })
+    
+    app.post("/apple",(req,res)=>{
+        res.send("you comtain apple path");
+        });
+    
+    app.post("/banana",(req,res)=>{
+            res.send("you comtain banana path");
+            })
+    
+    app.post("*",(req,res)=>{
+        res.send("this psth not found");
+    })  
+    
+
 /************* req.params **************/
 
 app.get("/:username",(req,res)=>{
