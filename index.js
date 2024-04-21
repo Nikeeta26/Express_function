@@ -5,19 +5,19 @@ app.listen(port,()=>{
     console.log(`app is listen on port ${port}`);
 });
 /******************** app.use method ****************/
-// app.use((req,res)=>{
-//     // console.log(req);
+app.use((req,res)=>{
+    // console.log(req);
 
-//   console.log("request received");
+  console.log("request received");
 
-// //  res.send("this is a basic response");
-// //  res.send({
-// //     name:"mango",
-// //     color:"red"
-// //  });
-//  let code = "<h1>Fruit</h1><ul><li>namgo</li><li>banana</li></ul>";
-//  res.send(code);
-// })
+//  res.send("this is a basic response");
+//  res.send({
+//     name:"mango",
+//     color:"red"
+//  });
+ let code = "<h1>Fruit</h1><ul><li>namgo</li><li>banana</li></ul>";
+ res.send(code);
+})
 
 /********************* app.get ***************/
 app.get("/",(req,res)=>{
