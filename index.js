@@ -10,11 +10,11 @@ app.use((req,res)=>{
 
   console.log("request received");
 
-//  res.send("this is a basic response");
-//  res.send({
-//     name:"mango",
-//     color:"red"
-//  });
+ res.send("this is a basic response");
+ res.send({
+    name:"mango",
+    color:"red"
+ });
  let code = "<h1>Fruit</h1><ul><li>namgo</li><li>banana</li></ul>";
  res.send(code);
 })
@@ -35,3 +35,22 @@ app.get("/banana",(req,res)=>{
 app.get("*",(req,res)=>{
     res.send("this psth not found");
 })  
+
+/************* req.params **************/
+
+app.get("/:username",(req,res)=>{
+    let{username} = req.params;
+    let mtmlStr = `<h1>welcome to the page of @${username}!`;
+       res.send(mtmlStr);
+    });
+
+
+/****************** req.quer *************/
+app.get("/search",(req,res)=>{
+    let{q}=req.query;
+    if(!q)
+ {
+     res.send("nothing search");
+ }
+      res.send(`success ${q}`);
+     });
